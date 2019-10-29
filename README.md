@@ -6,9 +6,16 @@ for dynamically updating firewall whitelist based from DNS TXT record
 - Use  
 python firewall_update_linux.py ip.txt.example.com
 
-- add this line to your iptables configure file  
+- add following line to your iptables configure file  
 `-A INPUT -m set --match-set trusted src -j ACCEPT`  
-/etc/sysconfig/iptables
+/etc/sysconfig/iptables  
+
+- and Comment out the following line  
+You can find this line  
+-A INPUT -p tcp -m state --state NEW -m tcp --dport 22 -j ACCEPT  
+
+Change into  
+#-A INPUT -p tcp -m state --state NEW -m tcp --dport 22 -j ACCEPT  
 
 - If you want automatically create ipset on startup please check [systemd-ipset](https://github.com/BroHui/systemd-ipset-service) by BroHui   
 - If you iptables including a Non-existent ipset, iptables service will broken won't start, that's why we need systemd-ipset
