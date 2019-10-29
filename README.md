@@ -1,4 +1,5 @@
 # DynFirewall
+To help to protect servers from remote attacks  such as ssh service 3306 database services, or windows remote desktop.
 for dynamically updating firewall whitelist based from DNS TXT record
 
 
