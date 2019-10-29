@@ -3,7 +3,7 @@ To help to protect servers from remote attacks  such as ssh service 3306 databas
 for dynamically updating firewall whitelist based from DNS TXT record
 
 
-- Use  
+- Use , you can add it to crontab  
 python firewall_update_linux.py ip.txt.example.com
 
 - add following line to your iptables configure file  
