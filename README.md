@@ -27,3 +27,10 @@ host     type  record
 ip.txt   TXT   "1.1.1.1,2.2.2.2/32"  
 ip.txt   TXT   "3.3.3.3"  
 ip.txt   TXT   "4.4.4.0/24"  
+
+
+# Windows Server 2012 Later
+- You can use pyinstaller to Build EXE binary  
+pyinstaller -F firewall_update_win.py
+- CDM to create a Schtasks
+`Schtasks /create /tn "Firewall_Update" /RU SYSTEM /sc daily /st 00:00 /RI 1 /K /DU 24:00 /tr "C:\Windows\system32\firewall_update_win.exe ip.trusted.rootglobal.com"`
