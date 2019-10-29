@@ -3,7 +3,7 @@ import dns.resolver
 cmd_show = 'netsh advfirewall firewall show rule "Remote Desktop (TCP-In) by Auto Managed"'
 cmd_add = 'netsh advfirewall firewall add rule name="Remote Desktop (TCP-In) by Auto Managed" protocol=TCP dir=in localport=3389 remoteip="{subnet}" service=any profile=any description="For foreign Windows editions" action=allow'
 cmd_update = 'netsh advfirewall firewall set rule name="Remote Desktop (TCP-In) by Auto Managed" new remoteip="{subnet}"'
-cmd_task = 'Schtasks /create /tn "Firewall_Update" /RU SYSTEM /sc daily /st 00:00 /RI 1 /K /DU 24:00 /tr "C:\Windows\system32\firewall_update.exe ip.trusted.rootglobal.com"'
+cmd_task = 'Schtasks /create /tn "Firewall_Update" /RU SYSTEM /sc daily /st 00:00 /RI 1 /K /DU 24:00 /tr "C:\Windows\system32\firewall_update.exe ip.txt.example.com"'
 
 
 
